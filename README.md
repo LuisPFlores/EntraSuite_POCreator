@@ -105,3 +105,43 @@ Add this configuration:
 Replace the paths and credentials with your actual values.
 ## Step 5: Restart Claude Desktop
 Close and reopen Claude Desktop completely.
+
+# Try asking me:
+
+Private Access Operations:
+
+"List all private access applications"
+"Create a new Quick Access app for our internal CRM at crm.company.local"
+"Assign the Sales team group to the CRM application"
+"Show me all private access connectors"
+
+Combined Operations:
+
+"Create a forwarding profile for private access"
+"Set up a private access app for our internal SharePoint server at sharepoint.internal.company.com on port 443"
+"Assign users admin@camilcotena01.onmicrosoft.com and name@tenant.onmicrosoft.com to the internal app"
+
+Access Reviews:
+
+"Create an access review for the IT Department group with a 14-day duration"
+"List all active access reviews"
+"Show me the decisions from the latest access review"
+
+Entitlement Management:
+
+"List all access packages in our tenant"
+"Create a new catalog called 'Sales Resources'"
+"Request access to the 'SharePoint Sales' package for user name@tenant.onmicrosoft.com"
+
+Privileged Identity Management (PIM):
+
+"List all privileged roles available"
+"Show me the role assignments for name@tenant.onmicrosoft.com"
+"Create an eligible assignment for Global Administrator role"
+"Activate the Security Administrator role with justification 'Security incident investigation'"
+
+Lifecycle Workflows:
+
+"List all lifecycle workflows"
+"Create a new joiner workflow for onboarding"
+"Run the onboarding workflow for the new user name@tenant.onmicrosoft.com"
