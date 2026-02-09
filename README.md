@@ -28,17 +28,45 @@ venv\Scripts\activate
 ## Step 2: Update Your Entra App Registration
 ### API Permissions needed:
 
-User.Read.All - Read all users' full profiles
+*User.Read.All* - Read all users' full profiles
 
-Group.Read.All - Read all groups
+*Group.Read.All* - Read all groups
 
-Directory.Read.All - Read directory data
+*Directory.Read.All* - Read directory data
 
-User.ReadWrite.All - Read and write all users (if you want write access)
+*User.ReadWrite.All* - Read and write all users (if you want write access)
 
-Group.ReadWrite.All - Read and write all groups (if you want write access)
+*Group.ReadWrite.All* - Read and write all groups (if you want write access)
 
-**Make sure to Grant admin consent for these permissions.**
+*Policy.Read.All* - Read conditional access policies
+
+*Policy.ReadWrite.ConditionalAccess* - Manage conditional access
+
+*Application.Read.All* - Read applications
+
+*Application.ReadWrite.All* - Manage applications (if needed)
+
+*NetworkAccess.ReadWrite.All* - Manage network access policies
+
+*NetworkAccessPolicy.ReadWrite.All* - Read/Write network access policies
+
+*Policy.Read.All* - Read policies
+
+*Policy.ReadWrite.ConditionalAccess* - Manage conditional access
+
+*AccessReview.ReadWrite.All* - Manage access reviews
+
+*EntitlementManagement.ReadWrite.All* - Manage entitlement management
+
+*PrivilegedAccess.ReadWrite.AzureAD* - Manage PIM
+
+*LifecycleWorkflows.ReadWrite.All* - Manage lifecycle workflows
+
+*RoleManagement.ReadWrite.Directory* - Manage directory roles
+
+**To provide the client app access to Microsoft Graph:** https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis  
+
+*Make sure to Grant admin consent for these permissions.*
 
 ## Step 3: Create Environment Configuration
 Create a .env file:
