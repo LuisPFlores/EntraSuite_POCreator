@@ -1,5 +1,5 @@
 # EntraSuite_POCreator
-Interface to deploy Entra Suite Proof-of-Concept
+This interface enables deployment of Entra Suite configurations and creation of Proof of Concepts (PoCs) using Claude AI Platform with a local MCP server
 
 ## Step 1: Set Up Your Python Environment
 ### Create a new directory for your MCP server
@@ -108,40 +108,54 @@ Close and reopen Claude Desktop completely.
 
 # Try asking me:
 
-Private Access Operations:
+## Entra Private Access Operations:
 
-"List all private access applications"
-"Create a new Quick Access app for our internal CRM at crm.company.local"
-"Assign the Sales team group to the CRM application"
-"Show me all private access connectors"
+* "List all private access applications"
 
-Combined Operations:
+* "Create a new Quick Access app for our internal CRM at crm.company.local"
 
-"Create a forwarding profile for private access"
-"Set up a private access app for our internal SharePoint server at sharepoint.internal.company.com on port 443"
-"Assign users admin@camilcotena01.onmicrosoft.com and name@tenant.onmicrosoft.com to the internal app"
+* "Assign the Sales team group to the CRM application"
 
-Access Reviews:
+* "Show me all private access connectors"
 
-"Create an access review for the IT Department group with a 14-day duration"
-"List all active access reviews"
-"Show me the decisions from the latest access review"
+## Combined Operations:
 
-Entitlement Management:
+* "Create a forwarding profile for private access"
 
-"List all access packages in our tenant"
-"Create a new catalog called 'Sales Resources'"
-"Request access to the 'SharePoint Sales' package for user name@tenant.onmicrosoft.com"
+* "Set up a private access app for our internal SharePoint server at sharepoint.internal.company.com on port 443"
 
-Privileged Identity Management (PIM):
+* "Assign users admin@tenant.onmicrosoft.com and name@tenant.onmicrosoft.com to the internal app"
 
-"List all privileged roles available"
-"Show me the role assignments for name@tenant.onmicrosoft.com"
-"Create an eligible assignment for Global Administrator role"
-"Activate the Security Administrator role with justification 'Security incident investigation'"
+## Access Reviews:
 
-Lifecycle Workflows:
+* "Create an access review for the IT Department group with a 14-day duration"
 
-"List all lifecycle workflows"
-"Create a new joiner workflow for onboarding"
-"Run the onboarding workflow for the new user name@tenant.onmicrosoft.com"
+* "List all active access reviews"
+
+* "Show me the decisions from the latest access review"
+
+## Entitlement Management:
+
+* "List all access packages in our tenant"
+
+* "Create a new catalog called 'Sales Resources'"
+
+* "Request access to the 'SharePoint Sales' package for user name@tenant.onmicrosoft.com"
+
+## Privileged Identity Management (PIM):
+
+* "List all privileged roles available"
+
+* "Show me the role assignments for name@tenant.onmicrosoft.com"
+
+* "Create an eligible assignment for Global Administrator role"
+
+* "Activate the Security Administrator role with justification 'Security incident investigation'"
+
+## Lifecycle Workflows:
+
+* "List all lifecycle workflows"
+
+* "Create a new joiner workflow for onboarding"
+
+* "Run the onboarding workflow for the new user name@tenant.onmicrosoft.com"
