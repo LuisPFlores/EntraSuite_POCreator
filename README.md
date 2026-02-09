@@ -1,6 +1,11 @@
 # EntraSuite_POCreator
 This interface enables deployment of Entra Suite configurations and creation of Proof of Concepts (PoCs) using Claude AI Platform with a local MCP server
 
+## Prerequisites
+Python 3.10 or higher
+
+pip or uv package manager
+
 ## Step 1: Set Up Your Python Environment
 ### Create a new directory for your MCP server
 ```
@@ -22,7 +27,7 @@ venv\Scripts\activate
 ```
 ### Install required dependencies
 ```
-   pip install mcp azure-identity msgraph-sdk python-dotenv
+pip install mcp azure-identity msgraph-sdk python-dotenv
 ```
 
 ## Step 2: Update Your Entra App Registration
@@ -99,9 +104,8 @@ Add this configuration:
       }
     }
   }
-```
 }
-
+```
 Replace the paths and credentials with your actual values.
 ## Step 5: Restart Claude Desktop
 Close and reopen Claude Desktop completely.
