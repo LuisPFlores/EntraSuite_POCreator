@@ -48,3 +48,32 @@ AZURE_CLIENT_ID=your_client_id_here
 AZURE_TENANT_ID=your_tenant_id_here
 AZURE_CLIENT_SECRET=your_client_secret_here  # Optional, for app-only auth
 ```
+
+## Step 4: Configure Claude Desktop
+Edit Claude Desktop config file:
+```
+macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
+```
+```
+Windows: %APPDATA%\Claude\claude_desktop_config.json
+```
+Add this configuration:
+```
+{
+  "mcpServers": {
+    "entra": {
+      "command": "/full/path/to/mcp-entra-server/venv/bin/python",
+      "args": ["/full/path/to/mcp-entra-server/server.py"],
+      "env": {
+        "AZURE_CLIENT_ID": "your_client_id",
+        "AZURE_TENANT_ID": "your_tenant_id",
+        "AZURE_CLIENT_SECRET": "your_client_secret"
+      }
+    }
+  }
+```
+}
+
+Replace the paths and credentials with your actual values.
+## Step 5: Restart Claude Desktop
+Close and reopen Claude Desktop completely.
