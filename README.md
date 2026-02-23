@@ -29,6 +29,12 @@ venv\Scripts\activate
 ```
 pip install mcp azure-identity msgraph-sdk python-dotenv
 ```
+### Windows Long Path Support
+Registry Method (requires admin rights):
+```
+Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem' `
+   -Name LongPathsEnabled -Type DWord -Value 1
+```
 
 ## Step 2: Update Your Entra App Registration
 ### API Permissions needed:
