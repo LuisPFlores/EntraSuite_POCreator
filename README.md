@@ -102,7 +102,7 @@ Add this configuration:
   "mcpServers": {
     "entra": {
       "command": "/full/path/to/mcp-entra-server/venv/bin/python",
-      "args": ["/full/path/to/mcp-entra-server/server.py"],
+      "args": ["/full/path/to/mcp-entra-server/entra_suite_server.py"],
       "env": {
         "AZURE_CLIENT_ID": "your_client_id",
         "AZURE_TENANT_ID": "your_tenant_id",
