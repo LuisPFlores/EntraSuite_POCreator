@@ -1,0 +1,69 @@
+# Microsoft Defender for Cloud - Container Image Scan
+# Scans container images for vulnerabilities on every push to main
+# Requires: GitHub Advanced Security or Defender for DevOps connector
+#
+# Setup:
+#   1. Connect GitHub org to Defender for Cloud:
+#      Azure Portal > Defender for Cloud > Environment Settings > Add Environment > GitHub
+#   2. Add these repository secrets:
+#      - DEFENDER_TENANT_ID
+#      - DEFENDER_CLIENT_ID
+#      - DEFENDER_CLIENT_SECRET
+
+name: Defender Container Image Scan
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  security-events: write
+
+jobs:
+  defender-scan:
+    name: Defender for Cloud Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image (if Dockerfile exists)
+        id: docker-build
+        run: |
+          if [ -f Dockerfile ]; then
+            docker build -t my-image:latest .
+            echo "image_built=true" >> $GITHUB_OUTPUT
+          else
+            echo "No Dockerfile found - skipping build"
+            echo "image_built=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Microsoft Security DevOps
+        uses: microsoft/security-devops-action@v1
+        id: msdo
+        with:
+          tools: container-mapping
+        env:
+          DEFENDER_TENANT_ID: ${{ secrets.DEFENDER_TENANT_ID }}
+          DEFENDER_CLIENT_ID: ${{ secrets.DEFENDER_CLIENT_ID }}
+          DEFENDER_CLIENT_SECRET: ${{ secrets.DEFENDER_CLIENT_SECRET }}
+
+      - name: Upload results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: ${{ steps.msdo.outputs.sarifFile }}
+
+      - name: Upload scan artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: defender-scan-results
+          path: ${{ steps.msdo.outputs.sarifFile }}
+          retention-days: 30
